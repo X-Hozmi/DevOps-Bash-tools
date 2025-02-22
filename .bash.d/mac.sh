@@ -27,6 +27,10 @@ bash_tools="${bash_tools:-$(dirname "${BASH_SOURCE[0]}")/..}"
 
 is_mac || return
 
+export HOMEBREW_DISPLAY_INSTALL_TIMES=1
+#export HOMEBREW_DEBUG=1
+#export HOMEBREW_CLEANUP_MAX_AGE_DAYS=30  # default: 120
+
 alias osash="osascript -i"
 alias osashell=osash
 
@@ -114,7 +118,7 @@ alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 # clear paste buffer
 clpb(){
-    copy_to_clipboard < /dev/null
+    copy_to_clipboard.sh < /dev/null
 }
 
 macmac(){
